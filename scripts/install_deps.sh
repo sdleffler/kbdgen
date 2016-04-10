@@ -16,7 +16,7 @@ libtool_build() {
 	wget https://launchpad.net/ubuntu/+archive/primary/+files/libtool_2.4.6-0.1.debian.tar.xz
 
 	tar xf libtool_2.4.6.orig.tar.xz
-	pushd libtool_2.4.6
+	pushd ./libtool-2.4.6
 	tar xf ../libtool_2.4.6-0.1.debian.tar.xz
 
 	dpkg-buildpackage -us -uc
