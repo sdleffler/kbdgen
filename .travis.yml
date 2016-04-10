@@ -36,5 +36,5 @@ addons:
       - openjdk-7-jdk
       - imagemagick
       - gettext
-
+      - autopoint
 
