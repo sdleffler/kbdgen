@@ -11,7 +11,7 @@ from lxml import etree
 from lxml.etree import Element, SubElement
 
 from .base import *
-from .. import boolmap, get_logger
+from .. import boolmap, get_logger, KbdgenException
 
 logger = get_logger(__file__)
 
@@ -480,7 +480,7 @@ class AndroidGenerator(Generator):
                 shell=True)
         process.wait()
         if process.returncode != 0:
-            raise Exception("Application ended with error code %s." % process.returncode)
+            raise KbdgenException("Application ended with error code %s." % process.returncode)
 
         #rules_fn = os.path.join(deps_dir, self.REPO, 'custom_rules.xml')
         #with open(rules_fn) as f:

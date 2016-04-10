@@ -5,7 +5,7 @@ import subprocess
 from collections import defaultdict
 from textwrap import indent, dedent
 
-from .. import get_logger
+from .. import get_logger, KbdgenException
 from .base import *
 from .osxutil import *
 
@@ -84,7 +84,7 @@ class OSXGenerator(Generator):
         bundle_name = self._project.target('osx').get('bundleName', None)
 
         if bundle_name is None:
-            raise Exception("Target 'osx' has no 'bundleName' property. "
+            raise KbdgenException("Target 'osx' has no 'bundleName' property. "
                 "Please fix your project YAML file.")
 
         os.makedirs(os.path.join(bundle_path, 'Contents', 'Resources'),
