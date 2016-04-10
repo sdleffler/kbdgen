@@ -37,6 +37,8 @@ script:
   - ./scripts/run_target.sh
 addons:
   apt:
+    sources:
+      - ubuntu-toolchain-r-test
     packages:
       - openjdk-7-jre-headless
       - openjdk-7-jdk
@@ -44,4 +46,6 @@ addons:
       - gettext
       - autopoint
       - build-essential
+      - automake
+      - autoconf
 
