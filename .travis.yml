@@ -29,3 +29,5 @@ addons:
       - openjdk-7-jre-headless
       - openjdk-7-jdk
       - imagemagick
+osx_image: xcode7.3
+
