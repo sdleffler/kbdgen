@@ -66,6 +66,8 @@ android_deps() {
 	git clone https://github.com/bbqsrc/android-autotools.git
 	pip install ./android-autotools
 
+	sudo add-apt-repository "deb http://us.archive.ubuntu.com/ubuntu/ trusty-backports main restricted universe multiverse"
+	sudo apt-get update
 	sudo apt-get install -y swig3.0
 
 	yes_hack | $ANDROID_HOME/tools/android update sdk -u -a -t $SDK_TOOLS
