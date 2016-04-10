@@ -1,19 +1,31 @@
 language: python
 matrix:
-    include:
-        # Use the built in venv for linux builds
-        - os: linux
-          sudo: required
-          python: 3.5
-        # Use generic language for osx
-        - os: osx
-          language: generic
+  include:
+    - os: linux
+      python: 3.5
+      env: TARGET=svg
+    - os: linux
+      python: 3.5
+      env: TARGET=android
+    - os: linux
+      python: 3.5
+      env: TARGET=win
+    - os: osx
+      language: generic
+      env: TARGET=osx
+    - os: osx
+      language: generic
+      env: TARGET=ios
 before_install:
-    - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
-        brew update && brew install python3 && virtualenv ~/venv -p python3 && source ~/venv/bin/activate;
-      fi
+  - source ./scripts/install_deps.sh
 install:
-    - pip install -r requirements.txt
-    - pip install .
+  - pip install -r requirements.txt
+  - pip install .
 script:
-    - kbdgen -h
+  - ./scripts/run_target.sh
+addons:
+  apt:
+    packages:
+      - openjdk-8-jdk
+      - openjdk-8-jre
+      - imagemagick
