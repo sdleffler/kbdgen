@@ -48,6 +48,4 @@ addons:
       - build-essential
       - automake
       - autoconf
-      - swig3.0
-
 
