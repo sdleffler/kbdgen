@@ -30,11 +30,11 @@ android_deps() {
 	wget $SDK_URL_LINUX
 
 	echo "Installing Android NDK r10e..."
-	unzip $NDK_FN_LINUX
+	unzip -q $NDK_FN_LINUX
 	export NDK_HOME=$PWD/$NDK_PATH
 
 	echo "Installing Android SDK r24.4.1..."
-	unzip $SDK_FN_LINUX
+	unzip -q $SDK_FN_LINUX
 	export ANDROID_HOME=$PWD/$SDK_PATH
 
 	echo "Installing android-autotools..."
@@ -49,6 +49,7 @@ android_deps() {
 if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
 	brew update
 	brew install python3 imagemagick
+	pip3 install virtualenv
 	virtualenv ~/venv -p python3
 	source ~/venv/bin/activate
 	pip install -U pip
