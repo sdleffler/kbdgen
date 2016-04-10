@@ -48,7 +48,7 @@ android_deps() {
 # Prep OS X environment
 if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
 	brew update
-	brew install python3 imagemagick
+	brew install python3 imagemagick gettext
 	pip3 install virtualenv
 	virtualenv ~/venv -p python3
 	source ~/venv/bin/activate

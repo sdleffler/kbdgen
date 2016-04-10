@@ -16,9 +16,9 @@ matrix:
     - os: osx
       language: generic
       env: TARGET=ios
-before_install:
+install: true
+before_script:
   - source ./scripts/install_deps.sh
-install:
   - pip install -r requirements.txt
   - pip install .
 script:

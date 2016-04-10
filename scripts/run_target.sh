@@ -3,7 +3,7 @@
 CMD="python -m kbdgen"
 PROJECT="examples/project.yaml"
 
-export PATH="$PATH:$HOME/.bin"
+export PATH="$PATH:$HOME/.bin:/usr/local/opt/gettext/bin"
 
 case $TARGET in
 	ios)
