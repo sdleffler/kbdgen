@@ -63,7 +63,8 @@ android_deps() {
 	export ANDROID_HOME=$PWD/$SDK_PATH
 
 	echo "Installing android-autotools..."
-	pip install android-autotools
+	git clone https://github.com/bbqsrc/android-autotools.git
+	pip install ./android-autotools
 
 	yes_hack | $ANDROID_HOME/tools/android update sdk -u -a -t $SDK_TOOLS
 	popd
