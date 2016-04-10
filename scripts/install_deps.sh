@@ -69,6 +69,7 @@ android_deps() {
 	sudo add-apt-repository "deb http://us.archive.ubuntu.com/ubuntu/ trusty-backports main restricted universe multiverse"
 	sudo apt-get update
 	sudo apt-get install -y swig3.0
+	ln -s /usr/bin/swig3.0 $HOME/.bin/swig
 
 	yes_hack | $ANDROID_HOME/tools/android update sdk -u -a -t $SDK_TOOLS
 	popd
