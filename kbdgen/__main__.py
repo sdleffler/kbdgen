@@ -88,6 +88,7 @@ def main():
         x.generate()
     except KbdgenException as e:
         logger.error(e)
+        return 1
     except KeyboardInterrupt:
         return 0
 
