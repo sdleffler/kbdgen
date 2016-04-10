@@ -12,7 +12,7 @@ SDK_TOOLS="tools,platform-tools,android-23,build-tools-23.0.3,extra-android-supp
 
 libtool_build() {
 	pushd $HOME
-	sudo apt-get build-dep libtool
+	sudo apt-get build-dep -y libtool
 
 	wget https://launchpad.net/ubuntu/+archive/primary/+files/libtool_2.4.6.orig.tar.xz
 	wget https://launchpad.net/ubuntu/+archive/primary/+files/libtool_2.4.6-0.1.debian.tar.xz
@@ -23,7 +23,7 @@ libtool_build() {
 
 	dpkg-buildpackage -us -uc
 	sudo dpkg -i ../*.deb
-	sudo apt-get install -f
+	sudo apt-get install -yf
 	popd
 	popd
 }
