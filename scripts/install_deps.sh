@@ -51,6 +51,7 @@ if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
 	brew install python3 imagemagick
 	virtualenv ~/venv -p python3
 	source ~/venv/bin/activate
+	pip install -U pip
 fi
 
 case $TARGET in
