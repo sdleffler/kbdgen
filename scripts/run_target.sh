@@ -7,6 +7,7 @@ export PATH="$PATH:$HOME/.bin:/usr/local/opt/gettext/bin"
 
 case $TARGET in
 	ios)
+		export V=0 # Silent rules, less spammy
 		$CMD -t ios -b hfst -r https://github.com/bbqsrc/tasty-imitation-keyboard $PROJECT
 		;;
 	android)

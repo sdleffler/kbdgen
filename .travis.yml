@@ -16,6 +16,11 @@ matrix:
     - os: osx
       language: generic
       env: TARGET=ios
+      osx_image: xcode7.2
+    - os: osx
+      language: generic
+      env: TARGET=ios
+      osx_image: xcode7.3
 install: true
 before_script:
   - source ./scripts/install_deps.sh
@@ -29,5 +34,4 @@ addons:
       - openjdk-7-jre-headless
       - openjdk-7-jdk
       - imagemagick
-osx_image: xcode7.3
 

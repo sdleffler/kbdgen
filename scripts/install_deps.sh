@@ -34,7 +34,7 @@ android_deps() {
 	export NDK_HOME=$PWD/$NDK_PATH
 
 	echo "Installing Android SDK r24.4.1..."
-	unzip -q $SDK_FN_LINUX
+	tar xf $SDK_FN_LINUX
 	export ANDROID_HOME=$PWD/$SDK_PATH
 
 	echo "Installing android-autotools..."
