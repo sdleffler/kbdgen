@@ -2,12 +2,18 @@ language: python
 matrix:
   include:
     - os: linux
+      sudo: required
+      dist: trusty
       python: 3.5
       env: TARGET=svg
     - os: linux
+      sudo: required
+      dist: trusty
       python: 3.5
       env: TARGET=android
     - os: linux
+      sudo: required
+      dist: trusty
       python: 3.5
       env: TARGET=win
     - os: osx
@@ -37,4 +43,5 @@ addons:
       - imagemagick
       - gettext
       - autopoint
+      - build-essential
 

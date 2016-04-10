@@ -10,6 +10,22 @@ SDK_FN_LINUX=android-sdk_r24.4.1-linux.tgz
 SDK_URL_LINUX=https://dl.google.com/android/$SDK_FN_LINUX
 SDK_TOOLS="tools,platform-tools,android-23,build-tools-23.0.3,extra-android-support"
 
+libtool_build() {
+	pushd $HOME
+	wget https://launchpad.net/ubuntu/+archive/primary/+files/libtool_2.4.6.orig.tar.xz
+	wget https://launchpad.net/ubuntu/+archive/primary/+files/libtool_2.4.6-0.1.debian.tar.xz
+
+	tar xf https://launchpad.net/ubuntu/+archive/primary/+files/libtool_2.4.6.orig.tar.xz
+	pushd libtool_2.4.6
+	tar xf ../libtool_2.4.6.orig.tar.xz
+
+	dpkg-buildpackage -us -uc
+	sudo dpkg -i ../*.deb
+	sudo apt-get install -f
+	popd
+	popd
+}
+
 yes_hack() {
 	sleep 5 && while [ 1 ]; do sleep 1; echo y; done
 }
@@ -29,6 +45,8 @@ ios_deps() {
 }
 
 android_deps() {
+	libtool_build
+
 	pushd $HOME
 	wget $NDK_URL_LINUX
 	wget $SDK_URL_LINUX
