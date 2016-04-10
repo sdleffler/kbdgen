@@ -8,7 +8,11 @@ NDK_URL_LINUX=$NDK_DL_URL/$NDK_FN_LINUX
 SDK_PATH=android-sdk-linux
 SDK_FN_LINUX=android-sdk_r24.4.1-linux.tgz
 SDK_URL_LINUX=https://dl.google.com/android/$SDK_FN_LINUX
-SDK_TOOLS="tools,platform-tools,build-tools-21,extra-android-support,android-21"
+SDK_TOOLS="tools,platform-tools,android-23,build-tools-23.0.3,extra-android-support"
+
+yes_hack() {
+	sleep 5 && while [ 1 ]; do sleep 1; echo y; done
+}
 
 ios_deps() {
 	echo "Installing autotools..."
@@ -40,7 +44,7 @@ android_deps() {
 	echo "Installing android-autotools..."
 	pip install android-autotools
 
-	$ANDROID_HOME/tools/android update sdk -u -t $SDK_TOOLS
+	yes_hack | $ANDROID_HOME/tools/android update sdk -u -a -t $SDK_TOOLS
 	popd
 }
 
