@@ -21,7 +21,7 @@ libtool_build() {
 	pushd ./libtool-2.4.6
 	tar xf ../libtool_2.4.6-0.1.debian.tar.xz
 
-	dpkg-buildpackage -us -uc
+	dpkg-buildpackage -d -us -uc
 	sudo dpkg -i ../*.deb
 	sudo apt-get install -yf
 	popd
