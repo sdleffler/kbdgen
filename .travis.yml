@@ -5,17 +5,7 @@ matrix:
       sudo: required
       dist: trusty
       python: 3.5
-      env: TARGET=svg
-    - os: linux
-      sudo: required
-      dist: trusty
-      python: 3.5
       env: TARGET=android
-    - os: linux
-      sudo: required
-      dist: trusty
-      python: 3.5
-      env: TARGET=win
     - os: osx
       language: generic
       env: TARGET=osx
@@ -23,11 +13,21 @@ matrix:
     - os: osx
       language: generic
       env: TARGET=ios
-      osx_image: xcode7.2
+      osx_image: xcode7.3
     - os: osx
       language: generic
       env: TARGET=ios
-      osx_image: xcode7.3
+      osx_image: xcode7.2
+    - os: linux
+      sudo: required
+      dist: trusty
+      python: 3.5
+      env: TARGET=svg
+    - os: linux
+      sudo: required
+      dist: trusty
+      python: 3.5
+      env: TARGET=win
 install: true
 before_script:
   - source ./scripts/install_deps.sh
