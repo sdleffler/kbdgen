@@ -3,6 +3,8 @@
 CMD="python -m kbdgen"
 PROJECT="examples/project.yaml"
 
+export PATH="$PATH:$HOME/.bin"
+
 case $TARGET in
 	ios)
 		$CMD -t ios -b hfst -r https://github.com/bbqsrc/tasty-imitation-keyboard $PROJECT

@@ -3,11 +3,11 @@
 NDK_DL_URL=http://dl.google.com/android/repository
 NDK_PATH=android-ndk-r10e
 NDK_FN_LINUX=$NDK_PATH-linux-x86_64.zip
-
 NDK_URL_LINUX=$NDK_DL_URL/$NDK_FN_LINUX
+
 SDK_PATH=android-sdk-linux
 SDK_FN_LINUX=android-sdk_r24.4.1-linux.tgz
-SDK_URL_LINUX=https://dl.google.com/android/
+SDK_URL_LINUX=https://dl.google.com/android/$SDK_FN_LINUX
 SDK_TOOLS="tools,platform-tools,build-tools-21,extra-android-support,android-21"
 
 ios_deps() {
